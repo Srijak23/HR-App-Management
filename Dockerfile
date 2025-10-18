@@ -9,6 +9,6 @@ RUN npm install
 #Copy the complete source code into the docker image
 COPY . .
 #Expose port number
-EXPOSE 3010
+EXPOSE 3001
 #Run your application
-CMD ["node","server.js"]
+CMD ["npm","start"]

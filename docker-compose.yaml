@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+  hr-app:
+    build: .
+    container_name: hr-app-cont
+    ports:
+      - "3001:3000"
+    environment:
+      - MONGO_URI=mongodb://mongodb-cont:27017/hr_system
+      - DB_NAME=hr_system
+    depends_on:
+      - hr-db
+
+  hr-db:
+    image: mongo:latest
+    container_name: mongodb-cont
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
