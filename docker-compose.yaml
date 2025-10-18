@@ -15,6 +15,6 @@ services:
     image: mongo:latest
     container_name: mongodb-cont
     ports:
-      - "27017:27017"
+      - "27018:27017"
     volumes:
       - ./data:/data/db
